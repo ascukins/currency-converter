@@ -1,0 +1,26 @@
+@import "../../../styles-variables";
+
+div {
+  input,
+  select {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  input {
+    font: 400 $font-size-standard $font-family-standard;
+    width: 130px;
+    padding: 2px;
+    border: 1px solid gray;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  select {
+    font: 400 $font-size-standard $font-family-standard;
+    padding: 2px;
+    border: 1px solid gray;
+    height: 25px;
+  }
+}

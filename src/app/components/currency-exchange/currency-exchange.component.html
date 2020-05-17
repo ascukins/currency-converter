@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Currency exchange</h1>
+  <p>
+    {{ currencyRatesService.rateLoadStatusMessage }}
+  </p>
+  <ng-container *ngIf="currencyRatesService.currenciesExist()">
+    <p>
+      Rates dated:
+      {{ currencyRatesService.rateDate }}
+    </p>
+    <p>
+      <app-currency-amount-select
+        [currencies]="currencyRatesService.currencies"
+        [(amount)]="amount1"
+        [(currency)]="currency1"
+        (amountChange)="onAmount1Changed()"
+        (currencyChange)="onCurrencyChanged()"
+      >
+      </app-currency-amount-select>
+    </p>
+    <p>
+      Approximately equals to:
+    </p>
+    <p>
+      <app-currency-amount-select
+        [currencies]="currencyRatesService.currencies"
+        [(amount)]="amount2"
+        [(currency)]="currency2"
+        (amountChange)="onAmount2Changed()"
+        (currencyChange)="onCurrencyChanged()"
+      >
+      </app-currency-amount-select>
+    </p>
+  </ng-container>
+</div>
