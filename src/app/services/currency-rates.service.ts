@@ -84,7 +84,7 @@ export class CurrencyRatesService {
     const rateFrom = this.rateContainer.rates[currencyFrom];
     const rateTo = this.rateContainer.rates[currencyTo];
     if (rateFrom && rateTo) {
-      return amount * (rateTo / rateFrom);
+      return Math.round(amount * (rateTo / rateFrom) * 100) / 100;
     } else {
       return 0;
     }

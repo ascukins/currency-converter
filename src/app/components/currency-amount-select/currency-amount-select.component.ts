@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Currencies } from 'src/app/models/currencies';
 
 @Component({
   selector: 'app-currency-amount-select',
@@ -7,12 +8,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class CurrencyAmountSelectComponent implements OnInit {
 
-  @Input() currencies;
+  @Input() currencies: Currencies;
   @Input() currency: string;
   @Input() amount: number;
   @Output() currencyChange = new EventEmitter<string>();
   @Output() amountChange = new EventEmitter<number>();
-
 
   constructor() { }
 

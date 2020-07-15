@@ -2,12 +2,13 @@
   <input
     type="number"
     name="amount"
-    [(ngModel)]="amount"
+    step="0.01"
+    [ngModel]="amount"
     (ngModelChange)="onAmountChange($event)"
   />
   <select
     name="currency"
-    [(ngModel)]="currency"
+    [ngModel]="currency"
     (ngModelChange)="onCurrencyChange($event)"
   >
     <option *ngFor="let curr of currencies | keyvalue" [value]="curr.key"
